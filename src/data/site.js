@@ -7,7 +7,7 @@ export const site = {
   name: 'Jaurès Ayida',
   fullName: 'AYIDA AYIDA Michel Jaurès',
   email: 'ayidajaures3@gmail.com',
-  github: 'https://github.com/ayidajaures',
+  github: 'https://github.com/jauresayida',
   linkedin: 'https://www.linkedin.com/in/jaur%C3%A8s-ayida-33577835b',
   // Numéro WhatsApp au format international, sans "+" ni espaces (il n'est jamais affiché sur le site)
   whatsapp: '23561432407',
@@ -32,7 +32,7 @@ export const intelliroomShots = [
 
 // Liens du projet : laisse '' pour masquer le bouton
 export const intelliroomLinks = {
-  github: '',
+  github: 'https://github.com/jauresayida/cefod-intelliroom',
   demo: '',
 }
 
