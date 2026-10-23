@@ -68,7 +68,7 @@ export default function App() {
         <Stats t={t} />
         <About t={t} />
         <Skills t={t} />
-        <Projects t={t} />
+        <Projects t={t} lang={lang} />
         <Journey t={t} />
         <Passions t={t} />
         {hasGallery && <Gallery t={t} lang={lang} />}

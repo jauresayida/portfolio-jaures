@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useInView, useMotionValue, useReducedMotion, useSpring } from 'motion/react'
-import { ArrowUpRight, ChevronLeft, ChevronRight, Maximize2, Pause, Play, X } from 'lucide-react'
+import { ArrowUpRight, ChevronLeft, ChevronRight, Code2, Maximize2, Pause, Play, X } from 'lucide-react'
 import { intelliroomLinks, intelliroomMobileShots, intelliroomShots } from '../data/site'
+import { codeUi } from '../data/code'
+import CodeModal from './CodeModal'
 import { useFinePointer } from '../hooks/useMedia'
 import { GithubIcon } from './BrandIcons'
 import { Reveal, Section, SpotlightCard, Tag } from './ui'
@@ -262,9 +264,11 @@ function Showcase({ t, captions }) {
   )
 }
 
-export default function Projects({ t }) {
+export default function Projects({ t, lang = 'fr' }) {
   const p = t.projects
   const f = p.featured
+  const [codeOpen, setCodeOpen] = useState(false)
+  const closeCode = useCallback(() => setCodeOpen(false), [])
   return (
     <Section id="projects" eyebrow={p.eyebrow} title={p.title}>
       <Reveal>
@@ -318,8 +322,18 @@ export default function Projects({ t }) {
                   </li>
                 ))}
               </ul>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onClick={() => setCodeOpen(true)}
+                  className="btn-shine inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent transition hover:opacity-90"
+                >
+                  <Code2 className="h-4 w-4" />
+                  {(codeUi[lang] ?? codeUi.fr).button}
+                </button>
+              </div>
               {(intelliroomLinks.github || intelliroomLinks.demo) && (
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-3 flex flex-wrap gap-3">
                   {intelliroomLinks.github && (
                     <a
                       href={intelliroomLinks.github}
@@ -348,6 +362,8 @@ export default function Projects({ t }) {
           </div>
         </article>
       </Reveal>
+
+      <AnimatePresence>{codeOpen && <CodeModal key="code" lang={lang} onClose={closeCode} />}</AnimatePresence>
 
       <Reveal className="mt-16">
         <h3 className="font-display text-2xl font-semibold">{p.wipTitle}</h3>

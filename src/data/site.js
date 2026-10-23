@@ -30,9 +30,9 @@ export const intelliroomShots = [
   'home-light',
 ].map((name) => asset(`images/intelliroom/${name}.webp`))
 
-// Liens du projet : laisse '' pour masquer le bouton
+// Liens du projet : laisse '' pour masquer le bouton (le dépôt est privé : pas de lien GitHub)
 export const intelliroomLinks = {
-  github: 'https://github.com/jauresayida/cefod-intelliroom',
+  github: '',
   demo: '',
 }
 

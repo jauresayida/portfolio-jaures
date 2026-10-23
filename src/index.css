@@ -263,3 +263,16 @@ body::after {
     display: none;
   }
 }
+
+/* Coloration du code (fenêtre « Sous le capot ») : fond sombre dans les deux thèmes */
+.code-block {
+  -webkit-user-select: none;
+  user-select: none;
+  tab-size: 2;
+}
+.code-block .tok-comment { color: #8a7966; font-style: italic; }
+.code-block .tok-string { color: #a8d5a2; }
+.code-block .tok-variable { color: #f3c78f; }
+.code-block .tok-keyword { color: #e0a070; font-weight: 600; }
+.code-block .tok-number { color: #c9a0dc; }
+.code-block .tok-call { color: #9ed0ff; }
