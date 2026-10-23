@@ -5,7 +5,7 @@ export const config = {
   fullName: 'Ayida Ayida Michel Jaurès',
   shortName: 'Jaurès',
   email: 'ayidajaures3@gmail.com',
-  github: 'https://github.com/ayidajaures2',
+  github: 'https://github.com/ayidajaures',
   linkedin: 'https://www.linkedin.com/in/jaurès-ayida-33577835b',
   // Numéro WhatsApp au format international, sans + ni espaces.
   // Il n'est pas affiché : seul le bouton « Discuter sur WhatsApp » l'utilise.
